@@ -22,33 +22,25 @@ return require('packer').startup(function(use)
 		'rose-pine/neovim', 
 		as = 'rose-pine' ,
 		config = function ()
-			vim.cmd("colorscheme rose-pine")
+			vim.cmd('colorscheme rose-pine')
 		end
 	})
     ]]--
-    use("tanvirtin/monokai.nvim")
+    use('tanvirtin/monokai.nvim')
 	use ('theprimeagen/harpoon')
 	use ('mbbill/undotree')
 	use ('tpope/vim-fugitive')
     use ('Olical/conjure')
     use ('HiPhish/rainbow-delimiters.nvim')
+    use ('hrsh7th/nvim-cmp')
+    use ('hrsh7th/cmp-nvim-lsp')
+    use ('L3MON4D3/LuaSnip')
+    use ('saadparwaiz1/cmp_luasnip')
+    use ('rafamadriz/friendly-snippets')
 
 	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
-		requires = {
-			--- Uncomment these if you want to manage LSP servers from neovim
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'L3MON4D3/LuaSnip'},
-		}
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
 	}
-
 end)
-
