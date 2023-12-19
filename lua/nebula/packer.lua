@@ -43,4 +43,17 @@ return require('packer').startup(function(use)
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
 	}
+
+    use ({
+        'jackMort/ChatGPT.nvim',
+        config = function()
+            local chatgpt_config = require('nebula.chatgpt_config')
+            require('chatgpt').setup(chatgpt_config)
+        end,
+        requires = {
+            'MunifTanjim/nui.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
+        }
+    })
 end)
