@@ -1,4 +1,5 @@
 -- lua_ls: globals vim
+vim.g.copilot_filetypes = { yaml = true }
 
 -- Sets the cursor style for different modes in GUI Vim or Neovim. An empty string means the default terminal cursor will be used.
 vim.opt.guicursor = ""

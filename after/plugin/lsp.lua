@@ -114,3 +114,8 @@ lsp_config.spectral.setup {
     on_attach = on_attach,
     capabilities = cmp_capabilities
 }
+
+lsp_config.yamlls.setup {
+    on_attach = on_attach,
+    capabilities = cmp_capabilities
+}
