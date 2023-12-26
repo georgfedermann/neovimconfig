@@ -34,7 +34,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Disables highlighting of search results.
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 -- Enables incremental search that shows partial matches.
 vim.opt.incsearch = true
 
@@ -54,11 +54,23 @@ vim.opt.updatetime = 50
 -- Highlights column 80, useful for maintaining a maximum line length.
 vim.opt.colorcolumn = "80"
 
+
 -- Creates an auto command for YAML file types to set specific indentation and tab settings.
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "yaml",
     callback = function()
+        print("Setting YAML indentation and tab settings")
         -- The following settings are local to buffers of YAML files:
+        -- vim.opt_local.listchars = "tab:▸ ,trail:·,extends:❯,precedes:❮,nbsp:␣"
+        -- vim.opt_local.listchars = vim.opt_local.listchars = { tab = "▸ ", trail = "·", extends = "❯", precedes = "❮", nbsp = "␣" }
+        vim.opt_local.listchars = {
+            eol = '¬',
+            space = '␣',
+            trail = '✚',
+            extends = '◀',
+            precedes = '▶',
+        }
+        vim.opt_local.list = true
         vim.opt_local.tabstop = 2
         vim.opt_local.softtabstop = 2
         vim.opt_local.shiftwidth = 2
